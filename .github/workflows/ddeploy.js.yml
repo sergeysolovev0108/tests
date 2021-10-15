@@ -28,5 +28,5 @@ jobs:  #Workflow run is made up of one or more jobs
           npm ci 
       - name: deploy
         run: |
-          zip -qq -r -j deploy.zip ./* #--> Zip the Code As we know lambda function accept the zip file.
+          zip -r -j deploy.zip ./* #--> Zip the Code As we know lambda function accept the zip file.
           aws lambda update-function-code --function-name=s3trigger --zip-file=fileb://deploy.zip 
