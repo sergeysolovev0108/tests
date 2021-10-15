@@ -1,12 +1,4 @@
 console.log('Loading function');
-const testFolder = './';
-const fs = require('fs');
-
-fs.readdir(testFolder, (err, files) => {
-  files.forEach(file => {
-    console.log(file);
-  });
-});
 var sign = require('./index')
 //const fs = require("fs");
 require('dotenv').config({path: __dirname + '/.env'});
@@ -30,6 +22,16 @@ const s3 = new aws.S3({ apiVersion: '2006-03-01' });
 
 exports.handler = async (event, context) => {
 
+  const testFolder = '/';
+const fs = require('fs');
+
+fs.readdir(testFolder, (err, files) => {
+  files.forEach(file => {
+    console.log(file);
+  });
+});
+  
+  
     const bucket = event.Records[0].s3.bucket.name;
     const key = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, ' '));
 
