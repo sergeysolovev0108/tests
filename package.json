@@ -37,6 +37,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "encoding": "^0.1.12",
     "gost89": "^0.1.11",
     "jksreader": "^1.0.0",
