@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "11"
+  - "node"
+
+script:
+  - npm run cover
+  - codecov
+  - bash test/test.sh
