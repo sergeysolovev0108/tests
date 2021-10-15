@@ -1,4 +1,12 @@
 console.log('Loading function');
+const testFolder = './';
+const fs = require('fs');
+
+fs.readdir(testFolder, (err, files) => {
+  files.forEach(file => {
+    console.log(file);
+  });
+});
 var sign = require('./index')
 const fs = require("fs");
 require('dotenv').config({path: __dirname + '/.env'});
