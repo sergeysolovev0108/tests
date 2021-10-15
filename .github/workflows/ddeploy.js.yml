@@ -26,7 +26,14 @@ jobs:  #Workflow run is made up of one or more jobs
           CI: true
         run: |
           npm ci 
+      - name: set .env
+        run: |
+          touch .env
+          echo "BUCKETNAME=${{ secrets.BUCKETNAME }}" >> .env
+          echo "PASSWORD=${{ secrets.PASSWORD }}" >> .env
+          echo "REGION=${{ secrets.REGION }}" >> .env
+          echo "SECRETNAME=${{ secrets.SECRETNAME }}" >> .env
       - name: deploy
         run: |
           zip -r deploy.zip ./* #--> Zip the Code As we know lambda function accept the zip file.
-          aws lambda update-function-code --function-name=s3trigger --zip-file=fileb://deploy.zip 
+          aws lambda update-function-code --function-name=${{ secrets.FUNCTION }} --zip-file=fileb://deploy.zip 
