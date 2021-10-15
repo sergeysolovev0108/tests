@@ -28,7 +28,6 @@ jobs:  #Workflow run is made up of one or more jobs
           npm ci 
       - name: set .env
         run: |
-          touch .env
           echo "BUCKETNAME=${{ secrets.BUCKETNAME }}" >> .env
           echo "PASSWORD=${{ secrets.PASSWORD }}" >> .env
           echo "REGION=${{ secrets.REGION }}" >> .env
