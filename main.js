@@ -3,6 +3,7 @@ var sign = require('./index')
 const fs = require("fs");
 require('dotenv').config();
 const aws = require('aws-sdk');
+console.log(process.env.REGION)
 aws.config.update(
     {
         region: `${process.env.REGION}`
