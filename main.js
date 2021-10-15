@@ -3,13 +3,7 @@ var sign = require('./index')
 //const fs = require("fs");
 require('dotenv').config({path: __dirname + '/.env'});
 const aws = require('aws-sdk');
-const result = require('dotenv').config();
 
-if (result.error) {
-  throw result.error
-}
-
-console.log(result.parsed)
 
 console.log(process.env.REGION)
 aws.config.update(
@@ -22,16 +16,6 @@ const s3 = new aws.S3({ apiVersion: '2006-03-01' });
 
 exports.handler = async (event, context) => {
 
-  const testFolder = '/';
-const fs = require('fs');
-
-fs.readdir(testFolder, (err, files) => {
-  files.forEach(file => {
-    console.log(file);
-  });
-});
-  
-  
     const bucket = event.Records[0].s3.bucket.name;
     const key = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, ' '));
 
