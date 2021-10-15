@@ -1,7 +1,7 @@
 console.log('Loading function');
 var sign = require('./index')
 const fs = require("fs");
-require('dotenv').config();
+require('dotenv').config({path: __dirname + '/.env'});
 const aws = require('aws-sdk');
 const result = require('dotenv').config();
 
