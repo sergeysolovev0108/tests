@@ -1,0 +1,12 @@
+require('dotenv').config();
+
+
+
+
+const result = require('dotenv').config();
+
+if (result.error) {
+  throw result.error
+}
+
+console.log(result.parsed)

@@ -3,6 +3,14 @@ var sign = require('./index')
 const fs = require("fs");
 require('dotenv').config();
 const aws = require('aws-sdk');
+const result = require('dotenv').config();
+
+if (result.error) {
+  throw result.error
+}
+
+console.log(result.parsed)
+
 console.log(process.env.REGION)
 aws.config.update(
     {
