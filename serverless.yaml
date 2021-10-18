@@ -1,4 +1,4 @@
-service: Article-Test
+service: Test
 frameworkVersion: '2'
 
 provider:

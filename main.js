@@ -5,10 +5,10 @@ require('dotenv').config({path: __dirname + '/.env'});
 const aws = require('aws-sdk');
 
 
-console.log(process.env.REGION)
+console.log(process.env.AWS_REGION)
 aws.config.update(
     {
-        region: `${process.env.REGION}`
+        region: `${process.env.AWS_REGION}`
     }
 );
 

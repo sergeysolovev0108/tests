@@ -19,7 +19,7 @@ jobs:
           touch .env
           echo "BUCKETNAME=${{ secrets.BUCKETNAME }}" >> .env
           echo "PASSWORD=${{ secrets.PASSWORD }}" >> .env
-          echo "REGION=${{ secrets.REGION }}" >> .env
+          echo "AWS_REGION=${{ secrets.AWS_REGION }}" >> .env
           echo "SECRETNAME=${{ secrets.SECRETNAME }}" >> .env
       - name: Configure AWS credentials for account with session token
         uses: aws-actions/configure-aws-credentials@v1
@@ -28,4 +28,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: deploy
-        run: serverless deploy --stage production
+        run: serverless deploy

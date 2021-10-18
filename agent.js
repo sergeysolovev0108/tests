@@ -18,7 +18,7 @@ const io = {
 };
 
 var AWS = require('aws-sdk'),
-    region = `${process.env.REGION}`,
+    region = `${process.env.AWS_REGION}`,
     secret,
     decodedBinarySecret;
 
