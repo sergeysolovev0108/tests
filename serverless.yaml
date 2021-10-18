@@ -8,5 +8,3 @@ provider:
 functions:
   app:
     handler: main.handler
-    memorySize: 128
-    timeout: 50
