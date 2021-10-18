@@ -16,4 +16,3 @@ functions:
            bucket: signtests3
            event: s3:ObjectCreated:*
            existing: true
-
