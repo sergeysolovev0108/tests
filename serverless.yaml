@@ -10,7 +10,7 @@ functions:
     handler: main.handler
     memorySize: 128
     timeout: 50
-    role: arn:aws:iam::734078883937:role/s3-role-lambda
+    role: ${{ secrets.LAMBDA_ROLE }}
     events:
       - s3:
           bucket: ${{ secrets.BUCKETNAME }}
