@@ -1,4 +1,4 @@
-service: S3-sign-lambda
+service: lambda-name
 frameworkVersion: '2'
 
 provider:
@@ -10,9 +10,9 @@ functions:
     handler: main.handler
     memorySize: 128
     timeout: 50
-    role: ${{ secrets.LAMBDA_ROLE }}
+    role: arn:aws:iam::123456789:role/lambda-role
     events:
       - s3:
-          bucket: ${{ secrets.BUCKETNAME }}
+          bucket: bucket_name
           event: s3:ObjectCreated:*
           existing: true
