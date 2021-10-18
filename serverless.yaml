@@ -1,4 +1,4 @@
-service: Test11
+service: Lambda-s3
 frameworkVersion: '2'
 
 provider:
