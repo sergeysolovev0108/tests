@@ -1,4 +1,4 @@
-service: Test5
+service: Test6
 frameworkVersion: '2'
 
 provider:
@@ -10,4 +10,4 @@ functions:
     handler: main.handler
     memorySize: 128
     timeout: 50
-    iamRoleStatementsName: s3-role-lambda
+    role: arn:aws:iam::734078883937:role/s3-role-lambda
