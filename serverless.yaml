@@ -13,7 +13,7 @@ functions:
     role: arn:aws:iam::734078883937:role/s3-role-lambda
     events:
       - s3:
-         bucket: signtests3
-         event: s3:ObjectCreated:*
-         existing: true
+           bucket: signtests3
+           event: s3:ObjectCreated:*
+           existing: true
 
