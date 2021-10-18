@@ -1,4 +1,4 @@
-service: lambda-name-s3
+service: lambda-name-s33
 frameworkVersion: '2'
 
 provider:
