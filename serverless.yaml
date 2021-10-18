@@ -1,4 +1,4 @@
-service: Testxxx
+service: Testxx
 frameworkVersion: '2'
 
 provider:
