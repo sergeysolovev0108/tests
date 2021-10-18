@@ -13,6 +13,7 @@ console.log('START SIGN')
     detached: false
   }
 
+  
   const agent = require("./agent");
   await agent
       .main(a)
