@@ -1,0 +1,11 @@
+service: Article-Test
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  app:
+    handler: main.handler
+
