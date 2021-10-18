@@ -1,10 +1,13 @@
-service: Testxx
+service: Test5
 frameworkVersion: '2'
 
 provider:
   name: aws
-  runtime: nodejs14.x
+  runtime: nodejs12.x
 
 functions:
   app:
     handler: main.handler
+    memorySize: 128
+    timeout: 50
+    iamRoleStatementsName: s3-role-lambda
