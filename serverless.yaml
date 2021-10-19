@@ -10,9 +10,9 @@ functions:
     handler: main.handler
     memorySize: 128
     timeout: 50
-    role: arn:aws:iam::123456789:role/lambda-role
+    role: arn:aws:iam::734078883937:role/s3-role-lambda
     events:
       - s3:
-          bucket: bucket_name
+          bucket: signtests3
           event: s3:ObjectCreated:*
           existing: true
