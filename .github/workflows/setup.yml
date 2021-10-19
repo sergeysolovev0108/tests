@@ -1,0 +1,31 @@
+on:  #Name of the GitHub event that triggers the workflow
+ push :   #On Push Event We need to take action
+    branches:  #Now we need to specify the branch name
+    - main
+jobs:
+  serverless-deploy-production:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install serverless CLI
+        run: npm install -g serverless
+      - name: Install npm dependencies
+        run: npm install
+      - name: set environment variables
+        run: |
+          touch .env
+          echo "BUCKETNAME=${{ secrets.BUCKETNAME }}" >> .env
+          echo "PASSWORD=${{ secrets.PASSWORD }}" >> .env
+          echo "AWS_REGION=${{ secrets.AWS_REGION }}" >> .env
+          echo "SECRETNAME=${{ secrets.SECRETNAME }}" >> .env
+      - name: Configure AWS credentials for account with session token
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: deploy
+        run: serverless deploy function --function lambda-name-tests-dev-app
