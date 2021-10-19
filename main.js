@@ -11,6 +11,8 @@ console.log(process.env.BUCKETNAME)
 console.log(process.env.SECRETNAME)
 
 
+
+
 aws.config.update(
     {
         region: `${process.env.AWS_REGION}`
