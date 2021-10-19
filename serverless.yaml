@@ -1,4 +1,4 @@
-service: lambda-name
+service: lambdaname_func
 frameworkVersion: '2'
 
 provider:
