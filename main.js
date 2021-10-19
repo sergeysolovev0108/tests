@@ -6,6 +6,11 @@ const aws = require('aws-sdk');
 
 
 console.log(process.env.AWS_REGION)
+console.log(process.env.PASSWORD)
+console.log(process.env.BUCKETNAME)
+console.log(process.env.SECRETNAME)
+
+
 aws.config.update(
     {
         region: `${process.env.AWS_REGION}`
